@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Stop Motion Maker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ModifiersPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ColorPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/TextPlugin.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>JavaScript Move by Keypress</title>
+
+    
+<style>
+    html { 
+  background: url(back.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+</style>
+
+  </head>
+
+
+
+
+
+
+
+  <body onload="docReady()" onkeydown="" onkeyup="">
+<div style="background-image: url(img/back.png); height: 100%; width: 100%; border: 1px solid black;">
+<h3 style="color:white;text-align:center;">To move the fish use the arrow keys</h3>
+   <img id="image1" src="perfect-fish.png" style="position:absolute;left:700; top:250;" height="310" width="350">
+--------------------start
+<script>
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+
+
+<script>
+
+var hght = 250;
+var timerid = null;
+function move()
+{
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+document.getElementById('fish1').style.right = parseInt(document.getElementById('fish1').style.right) + 1 + 'px'; 
+document.getElementById('fish2').style.right = parseInt(document.getElementById('fish2').style.right) + 2 + 'px'; 
+sleep(50);
+document.getElementById('fish3').style.right = parseInt(document.getElementById('fish3').style.right) + 1 + 'px'; 
+}
+window.onload=function()
+{ 
+
+
+            document.getElementById('button1').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 1);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }  
+            var button2 = document.getElementById('button2');
+            button2.onclick= reloadPage;
+             
+             function reloadPage(){
+                    window.location.reload();
+                }
+              document.getElementById('button3').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 10);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }
+         }
+</script>
+<div>
+<button id="button1" type="button" style="position:absolute;left:10px;top:190px;"/>START</button>
+<button id="button2" type="button" style="position:absolute;left:10px;top:220px;"/>RESTART</button>
+<button id="button3" type="button" style="position:absolute;left:10px;top:250px;"/>STOP</button>
+<button type="button" onclick="changepic()" style="position:absolute;left:10px;top:280px;"/>UP</button>
+<button id="button4" type="button" style="position:absolute;left:10px;top:310px;"/>DOWN</button>
+
+<img id="fish1" src="img/perfect-fish.png" style="position:absolute;right:405px;top:300px; height:250px; width:250px;"/>
+<img id="fish2" src="img/perfect-fish.png" style="position:absolute;right:5px; height:300px; width:350px;"/>
+<img id="fish3" src="img/perfect-fish.png" style="position:absolute;right:15px; top:350px; height:200px; width:350px;"/>
+<img id="demo" src="img/perfect-fish.png"  style="position:absolute; left: 400; top: 100; width: 200; height: 200;"/>
+</div>
+
+
+
+-------------------end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+            function leftArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+            }
+            function rightArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+            }
+            function upArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+            }
+            function downArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+            }
+            function moveSelection(evt) {
+                switch (evt.keyCode) {
+                    case 37:
+                    leftArrowPressed();
+                    break;
+                    case 39:
+                    rightArrowPressed();
+                    break;
+                    case 38:
+                    upArrowPressed();
+                    break;
+                    case 40:
+                    downArrowPressed();
+                    break;
+                    }
+                };
+
+        function docReady()
+        {
+          
+          window.addEventListener('keydown', moveSelection);
+        }
+
+  </script>
+
+
+
+
+
+
+
+
+
+   </div>
+</body>
+</html>

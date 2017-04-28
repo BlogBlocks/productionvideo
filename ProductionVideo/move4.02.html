@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fish Kiss</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ModifiersPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ColorPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/TextPlugin.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/key-press.js"></script>
+<script>
+              window.addEventListener("keydown", function(e) {
+                  // space and arrow keys
+                  if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                      e.preventDefault();
+                  }
+              }, false);
+              </script>
+</head>
+<body onload="docReady()" onkeydown="" onkeyup="">
+<div id="gwrap">
+
+<script>
+window.onload=function()
+                { 
+                            document.getElementById('button1').onclick=function(){
+                                if(timerid == null){
+                                    timerid = setInterval("move()", 1);
+                                }else{
+                                    clearInterval(timerid);
+                                    timerid = null;
+                                }
+                            }  
+                            var button2 = document.getElementById('button2');
+                            button2.onclick= reloadPage;
+                             
+                             function reloadPage(){
+                                    window.location.reload();
+                                }
+                             document.getElementById('button3').onclick=function(){
+                                if(timerid == null){
+                                    timerid = setInterval("move()", 10);
+                                }else{
+                                    clearInterval(timerid);
+                                    timerid = null;
+                                }
+                            }
+                            var button4 = document.getElementById('button4');
+                            button4.onclick= reloadPage;
+                             
+                             function reloadPage(){
+                                    window.location.reload();
+                                }
+                }
+                
+                var hght = 250;
+                var timerid = null;
+                function move()
+                {
+                              // timer - stepper unit
+                              function sleep(milliseconds) {
+                                var start = new Date().getTime();
+                                for (var i = 0; i < 1e7; i++) {
+                                  if ((new Date().getTime() - start) > milliseconds){
+                                    break;
+                                  }
+                                }
+                              }
+                             // timer - stepper unit
+                    document.getElementById('fish1').style.right = parseInt(document.getElementById('fish1').style.right) + 1 + 'px'; 
+                    document.getElementById('fish2').style.right = parseInt(document.getElementById('fish2').style.right) + 2 + 'px'; 
+                    document.getElementById('fish3').style.right = parseInt(document.getElementById('fish3').style.right) + 1 + 'px'; 
+                    sleep(50);
+                }
+
+     </script>       
+
+    <div>
+          <button id="button1" type="button" style="position:absolute;left:10px;top:190px;"/>START</button>
+          <button id="button2" type="button" style="position:absolute;left:10px;top:220px;"/>RESTART</button>
+          <button id="button3" type="button" style="position:absolute;right:10px;top:250px;"/>STOP</button>
+          <button type="button" onclick="changepic()" style="position:absolute;left:10px;top:280px;"/>UP</button>
+          <button id="button4" type="button" style="position:absolute;left:10px;top:310px;"/>DOWN</button>
+
+          <img id="fish1" src="bugs/bug2.png" style="position:absolute;right:405px;top:300px; height:25px; width:25px;"/>
+          <img id="fish2" src="bugs/bug3.png" style="position:absolute;right:5px;top:200px;  height:30px; width:35px;"/>
+          <img id="fish3" src="bugs/bug4.png" style="position:absolute;right:15px; top:350px; height:40px; width:30px;"/>
+          <img id="image1" src="img/eater.png"  style="position:absolute; left: 400px; top: 100px; width: 200px; height: 200px;"/>
+    </div>
+<!-- Start move with Arroow keys Start -->
+                          <script type="text/javascript">
+                                  function leftArrowPressed() {
+                                  var element = document.getElementById("image1");
+                                  element.style.left = parseInt(element.style.left) - 5 + 'px';
+                                  }
+                                  function rightArrowPressed() {
+                                  var element = document.getElementById("image1");
+                                  element.style.left = parseInt(element.style.left) + 5 + 'px';
+                                  }
+                                  function upArrowPressed() {
+                                  var element = document.getElementById("image1");
+                                  element.style.top = parseInt(element.style.top) - 5 + 'px';
+                                  }
+                                  function downArrowPressed() {
+                                  var element = document.getElementById("image1");
+                                  element.style.top = parseInt(element.style.top) + 5 + 'px';
+                                  }
+                                  function moveSelection(evt) {
+                                      switch (evt.keyCode) {
+                                          case 37:
+                                          leftArrowPressed();
+                                          break;
+                                          case 39:
+                                          rightArrowPressed();
+                                          break;
+                                          case 38:
+                                          upArrowPressed();
+                                          break;
+                                          case 40:
+                                          downArrowPressed();
+                                          break;
+                                          }
+                                  };
+
+                              function docReady()
+                              {
+                                window.addEventListener('keydown', moveSelection);
+                              }
+                         </script>
+  <!-- Start move with Arroow keys end -->
+
+      </div>
+    </div>
+</body>
+</html>

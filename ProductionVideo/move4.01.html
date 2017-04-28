@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset=utf-8 />
+  <title>Stop Motion Maker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ModifiersPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ColorPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/TextPlugin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/key-press.js"></script>
+<script src="js/touch.js"></script>
+</head>
+    
+    <title>JS Bin</title>
+<style>
+ #gwrap {
+  background-image: url(img/back.png); 
+  width: 100%;
+  min-width: 970px;
+  margin:0 auto;
+  height:650px;
+}
+
+
+#left-control-box {
+  float: left;
+  max-width: 5%;
+   height:600px;
+   
+}
+
+#stage-area {
+  margin-left: 6%;
+  margin-right: 6%;
+  width:84%;
+  height:600px;
+   
+}
+
+#right-control-box {
+  float: right;
+  max-width: 5%;
+   
+  height:600px;
+} 
+
+
+
+
+.button3{
+
+padding:10px;
+color:white;
+text-align: center;
+width:50px;
+height:70px;
+background-color:#43A151;
+border:4px solid gray;
+border-radius:50%;
+display: inline-block;
+-webkit-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+-moz-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+}
+
+.button2{
+ 
+width:50px;
+height:70px;
+padding:10px;
+text-align: center;
+color:white;
+float:right;
+background-color:#43A151;
+border:4px solid gray;
+border-radius:50%;
+display: inline-block;
+-webkit-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+-moz-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+}
+.button1{
+ padding:10px;
+color:white;
+margin-top:30px;
+text-align: center;
+width:50px;
+height:70px;
+background-color:#43A151;
+border:4px solid gray;
+border-radius:50%;
+display: inline-block;
+-webkit-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+-moz-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+}
+
+.button4{
+width:50px;
+height:70px;
+padding:10px;
+margin-top:30px;
+text-align: center;
+color:white;
+display: inline-block;
+float:right;
+background-color:#43A151;
+border:4px solid gray;
+border-radius:50%;
+border
+display: inline-block;
+-webkit-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+-moz-box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+box-shadow: -11px 16px 23px -6px rgba(0,0,0,1);
+}
+.button5:hover{
+position:absolute;
+left:10px;
+top:50px;
+width:50px;
+height:50px;
+display: inline-block;
+margin-top:49px;
+margin-left:6px;
+background-color:red;
+border:4px solid gray;
+border-radius:50%;
+display: inline-block;
+}
+.button5:hover{
+position:absolute;
+right:11px;
+top:21px;
+width:50px;
+height:50px;
+display: inline-block;
+background-color:red;
+border:4px solid gray;
+border-radius:50%;
+display: inline-block;
+}
+
+.button{
+margin-top:50px;
+
+}
+
+body {
+background-color:black;
+}
+</style>
+  </head>
+  
+<script>
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+<script>
+var hght = 250;
+var timerid = null;
+function move()
+{
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+document.getElementById('fish1').style.right = parseInt(document.getElementById('fish1').style.right) + 1 + 'px'; 
+document.getElementById('fish2').style.right = parseInt(document.getElementById('fish2').style.right) + 2 + 'px'; 
+sleep(50);
+document.getElementById('fish3').style.right = parseInt(document.getElementById('fish3').style.right) + 1 + 'px'; 
+}
+window.onload=function()
+{ 
+      document.getElementById('button3').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 1);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }  
+
+            var button2 = document.getElementById('button2');
+            button2.onclick= reloadPage;
+             function reloadPage(){
+                    window.location.reload();
+                }
+  
+
+            document.getElementById('button3').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 10);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }
+
+            var button4 = document.getElementById('button4');
+            button4.onclick= reloadPage;
+             
+             function reloadPage(){
+                    window.location.reload();
+                }
+}
+</script>
+<body onload="docReady()" onkeydown="" onkeyup="">
+
+
+    <div id="gwrap">
+      <div id="left-control-box">
+
+<button id="button3" onclick="moveup()" >START</button>
+<button id="button1" type="button" >exp</button>
+
+
+      </div>
+      <div id="right-control-box">
+ <button id="button2" type="button">RE<br/>START</button>     
+<button id="button4" onclick="moved()">RE<br/>Left</button>
+
+    </div>
+      <div id="stage-area">
+
+
+<img id="fish1" src="bugs/bug2.png" style="position:absolute;right:405px;top:300px; height:25px; width:25px;"/>
+<img id="fish2" src="bugs/bug3.png" style="position:absolute;right:5px;top:200px;  height:30px; width:35px;"/>
+<img id="fish3" src="bugs/bug4.png" style="position:absolute;right:15px; top:350px; height:40px; width:30px;"/>
+<img id="image1" src="img/eater.png"  style="position:absolute; left: 400px; top: 100px; width: 200px; height: 200px;"/>
+
+
+   </div>
+    </div>
+ </body>
+</html>

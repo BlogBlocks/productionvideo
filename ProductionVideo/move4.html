@@ -1,0 +1,105 @@
+<html>
+ <head>
+ <meta charset=utf-8 />
+ <title>Bug Breakfast</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ModifiersPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ColorPropsPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/TextPlugin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style4.css">
+<script src="js/key-press.js"></script>
+<script src="js/touch.js"></script>
+</head>
+  
+<script>
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+
+<script>
+var hght = 250;
+var timerid = null;
+function move()
+{
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+document.getElementById('fish1').style.right = parseInt(document.getElementById('fish1').style.right) + 1 + 'px'; 
+document.getElementById('fish2').style.right = parseInt(document.getElementById('fish2').style.right) + 2 + 'px'; 
+sleep(50);
+document.getElementById('fish3').style.right = parseInt(document.getElementById('fish3').style.right) + 1 + 'px'; 
+}
+window.onload=function()
+{ 
+      document.getElementById('button3').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 1);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }  
+
+            var button2 = document.getElementById('button2');
+            button2.onclick= reloadPage;
+             function reloadPage(){
+                    window.location.reload();
+                }
+  
+
+            document.getElementById('button3').onclick=function(){
+                if(timerid == null){
+                    timerid = setInterval("move()", 10);
+                }else{
+                    clearInterval(timerid);
+                    timerid = null;
+                }
+            }
+
+            var button4 = document.getElementById('button4');
+            button4.onclick= reloadPage;
+             
+             function reloadPage(){
+                    window.location.reload();
+                }
+}
+</script>
+<body onload="docReady()" onkeydown="" onkeyup="">
+
+
+    <div id="gwrap">
+      <div id="left-control-box">
+
+<div id="button3" onclick="moveup()" >START</div>
+<div id="button1" type="button">exp</div>
+
+
+      </div>
+      <div id="right-control-box">
+ <div id="button2" type="button">RE<br/>START</div>     
+<div id="button4" onclick="moved()" >RE<br/>Left</div>
+
+    </div>
+      <div id="stage-area">
+
+
+<img id="fish1" src="bugs/bug2.png" style="position:absolute;right:405px;top:300px; height:25px; width:25px;"/>
+<img id="fish2" src="bugs/bug3.png" style="position:absolute;right:5px;top:200px;  height:30px; width:35px;"/>
+<img id="fish3" src="bugs/bug4.png" style="position:absolute;right:15px; top:350px; height:40px; width:30px;"/>
+<img id="image1" src="img/eater.png"  style="position:absolute; left: 400px; top: 100px; width: 200px; height: 200px;"/>
+   </div>
+    </div>
+ </body>
+</html>

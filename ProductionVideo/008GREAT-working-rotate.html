@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<style>
+/* Totally for style */
+.rotate {
+    background: #F02311;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font: normal 1em Arial;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+</style>
+</head>
+
+<div class="rotate">
+    <img src="img/perfect-fish.png" style="width:200px;height:175px;">
+</div>
+
+<script>
+var rotation = 0;
+
+jQuery.fn.rotate = function(degrees) {
+    $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+};
+
+$('.rotate').click(function() {
+    rotation += 5;
+    $(this).rotate(rotation);
+
+
+});
+</script>

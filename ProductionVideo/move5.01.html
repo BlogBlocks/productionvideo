@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Stop Motion Maker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles7.css">
+
+<!-- The arrow control js file -->
+<script type="text/javascript" src="js/key-press.js"></script>
+
+<!-- The drift acros the stcreen -->
+<script type="text/javascript" src="js/drift.js"></script>    
+</head>
+
+<!-- this is a requirement for up and down arrow execution 
+<body onload="docReady()" onkeydown="" onkeyup=""> 
+-->
+<body onload="docReady()" onkeydown="" onkeyup="">
+    <div id="gwrap">
+      <div id="left-control-box">
+
+<button id="button3" onclick="moveup()" >START</button>
+<button id="button1" type="button" >exp</button>
+
+
+      </div>
+      <div id="right-control-box">
+ <button id="button2" type="button">RE<br/>START</button>     
+<button id="button4" onclick="moved()">RE<br/>Left</button>
+
+    </div>
+      <div id="stage-area">
+
+
+<img id="fish1" src="bugs/bug2.png" alt="bug2" style="position:absolute;right:405px;top:300px; height:25px; width:25px;"/>
+<img id="fish2" src="bugs/bug3.png" alt="bug3" style="position:absolute;right:5px;top:200px;  height:30px; width:35px;"/>
+<img id="fish3" src="bugs/bug4.png" alt="bug4" style="position:absolute;right:15px; top:350px; height:40px; width:30px;"/>
+<img id="image1" src="img/eater.png"  alt="eater" style="position:absolute; left: 400px; top: 100px; width: 200px; height: 200px;"/>
+
+
+   </div>
+    </div>
+ </body>
+</html>

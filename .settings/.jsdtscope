@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="js/|js/jquery-ui-1.12.0.custom/external/jquery/|**/node_modules/*|js/greensock-js/src/minified/plugins/|js/greensock-js/src/uncompressed/utils/|js/jquery-ui-1.12.0.custom/|js/greensock-js/src/uncompressed/plugins/|js/greensock-js/src/minified/easing/|**/bower_components/*|toolbox/|js/greensock-js/src/uncompressed/easing/|js/greensock-js/src/uncompressed/|js/greensock-js/src/minified/|**/*.min.js|js/greensock-js/src/minified/utils/" kind="src" path=""/>
+	<classpathentry excluding="**/node_modules/*|greensock-js/src/uncompressed/plugins/|greensock-js/src/minified/easing/|greensock-js/src/uncompressed/|greensock-js/src/minified/|greensock-js/src/uncompressed/easing/|**/bower_components/*|jquery-ui-1.12.0.custom/|greensock-js/src/minified/utils/|jquery-ui-1.12.0.custom/external/jquery/|**/*.min.js|greensock-js/src/minified/plugins/|greensock-js/src/uncompressed/utils/" kind="src" path="js"/>
+	<classpathentry excluding="utils/|**/bower_components/*|easing/|**/node_modules/*|plugins/|**/*.min.js" kind="src" path="js/greensock-js/src/minified"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/minified/easing"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/minified/plugins"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/minified/utils"/>
+	<classpathentry excluding="utils/|**/bower_components/*|easing/|**/node_modules/*|plugins/|**/*.min.js" kind="src" path="js/greensock-js/src/uncompressed"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/uncompressed/easing"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/uncompressed/plugins"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/greensock-js/src/uncompressed/utils"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|external/jquery/|**/*.min.js" kind="src" path="js/jquery-ui-1.12.0.custom"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/jquery-ui-1.12.0.custom/external/jquery"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="toolbox"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
